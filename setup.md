@@ -64,6 +64,8 @@ Ensure that Tesseract is installed properly by running the following command:
 
 bash
 
+export PATH=$PATH:"/c/Users/aweymouth/Documents/Tesseract-OCR"
+
 tesseract --version
 
 This should display the version of Tesseract that was installed. If you see an error, ensure that Tesseract is properly installed and added to your PATH.
