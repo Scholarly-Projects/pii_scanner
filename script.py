@@ -30,8 +30,8 @@ def find_pii(text):
     patterns = {
         "Phone Number": r"\b(?:\+?1[-.\s]?)?(?:\(\d{3}\)|\d{3})[-.\s]?\d{3}[-.\s]?\d{4}\b",
         "Birthdate": r"\b(?:0[1-9]|1[0-2])[-/.](?:0[1-9]|[12][0-9]|3[01])[-/.](?:19|20)\d{2}\b",
-        "Driver's License": r"\b(?:DL|Driver'?s License)?\s*([A-Z0-9-]*\d[A-Z0-9-]*)\b",
-        "Passport Number": r"\b(?:Passport Number|PPN)?\s*([A-Z0-9-]*\d[A-Z0-9-]*)\b",
+        "Driver's License": r"\b(?:DL|Driver'?s License)?\s*([A-Z0-9-]*\d[A-Z0-9-]*)\b(?=\b[A-Z0-9]{6,10}\b)",
+        "Passport Number": r"\b(?:Passport Number|PPN)?\s*([A-Z0-9-]*\d[A-Z0-9-]*)\b(?=\b[A-Z0-9]{9}\b)",
         "Employee ID": r"\b(?:Employee ID|Emp ID)?\s*(\d{6,10})\b",
         "Social Security Number": r"\b(?:SSN|Social Security Number)[:\s-]*(\d{3}[-\s]?\d{2}[-\s]?\d{4})\b",
         "Address": r"\b\d{1,5}\s[\w\s]+(?:Street|St|Avenue|Ave|Road|Rd|Boulevard|Blvd|Drive|Dr|Lane|Ln|Court|Ct|Way|Place|Pl),?\s*\b[A-Za-z\s]+,\s*[A-Za-z]{2}\s*\b\d{5}\b"
